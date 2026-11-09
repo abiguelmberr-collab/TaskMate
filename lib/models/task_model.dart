@@ -1,5 +1,6 @@
 
 class TaskModel {
+  final int? id;
   final String title;
   final String category;
   final String priority;
@@ -7,6 +8,7 @@ class TaskModel {
   final String date;
 
   const TaskModel({
+    this.id,
     required this.title,
     required this.category,
     required this.priority,
@@ -16,6 +18,7 @@ class TaskModel {
 
   factory TaskModel.fromJson(Map<String, dynamic> json) {
     return TaskModel(
+      id: json['id'] as int?,
       title: json['title'] ?? '',
       category: json['category'] ?? '',
       priority: json['priority'] ?? 'Medium',
